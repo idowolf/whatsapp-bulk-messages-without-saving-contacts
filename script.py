@@ -50,6 +50,7 @@ for index, column in enumerate(excel_data['Contact'].tolist()):
             click_btn_child = WebDriverWait(driver, 35).until(EC.visibility_of_element_located((By.XPATH, '//span[@data-testid="send"]')))
             click_btn = click_btn_child.find_element("xpath", ('..'))
         except Exception as e:
+            print(str(e))
             print("Sorry message could not sent to " + str(contactStr))
         else:
             sleep(2)
@@ -59,6 +60,7 @@ for index, column in enumerate(excel_data['Contact'].tolist()):
             print('Message sent to: ' + str(contactStr))
         count = count + 1
     except Exception as e:
+        print(str(e))
         print('Failed to send message to ' + str(contactStr) + str(e))
 driver.quit()
 print("The script executed successfully.")
