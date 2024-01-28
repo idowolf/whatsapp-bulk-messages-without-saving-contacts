@@ -42,7 +42,7 @@ for index, column in enumerate(excel_data['Contact'].tolist()):
             contactStr = "+" + contactStr
         if (contactStr.startswith('5')):
             contactStr = '+972' + contactStr
-        url = 'https://web.whatsapp.com/send?phone=' + str(contactStr) + '&text=' + excel_data['Message'][index]
+        url = 'https://web.whatsapp.com/send?phone={}&text={}'.format(contactStr, excel_data['Message'][index])
         sent = False
         # It tries 3 times to send a message in case if there any error occurred
         driver.get(url)

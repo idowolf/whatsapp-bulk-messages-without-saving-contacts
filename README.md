@@ -5,21 +5,21 @@ pip3 install -r requirements.txt
 
 It is a python script that sends WhatsApp message automatically from WhatsApp web application without saved contact numbers. It can be configured to send advertising messages to recipients. It read data from an excel sheet and send a configured message to people.
 
-## Demo
-* Video clip on youtube of the script execution. https://youtu.be/KBe26Kk5d9c
+## Contact me over Telegram: https://t.me/inforkgodara
 
 ## Important Note
-* If this repository helped you to understand at least something new please give star this repository which motivates me to work further for the similar kinds for projects.
+* WhatsApp Business released API on May 2022, no longer needed this repository. You can accomplish your same requirements through WhatsApp Business APIs.
 
 ## Prerequisites
 
-In order to run the python script, your system must have the following programs/packages installed and the contact number should be saved in your phone (You can use bulk contact number saving procedure of email). There is a way without saving the contact number but has the limitation to send the attachment.
+In order to run the python script, your system must have the following programs/packages installed and the contact number not need to be saved in your phone (You can use bulk contact number saving procedure of email). It has limitation of sending attachment but you can refer to my another repo which has functionality to send document file like pdf, image, etc.
 * Python 3.8: Download it from https://www.python.org/downloads
 * Chrome v79: Download it from https://chrome.google.com
 * Pandas : Run in command prompt **pip install pandas**
 * Xlrd : Run in command prompt **pip install xlrd**
 * Selenium: Run in command prompt **pip install selenium** 
 * Web Driver: Run in command prompt **pip install webdriver_manager**
+* Openpyxl: Run in command prompt **pip install openpyxl**
 
 ## Approach
 * First need to clone this respiratory
@@ -64,7 +64,7 @@ for column in excel_data['Contact'].tolist():
         driver.get(url)
         try:
             click_btn = WebDriverWait(driver, 35).until(
-                EC.element_to_be_clickable((By.CLASS_NAME, '_4sWnG')))
+                EC.element_to_be_clickable((By.CLASS_NAME, '_3XKXx')))
         except Exception as e:
             print("Sorry message could not sent to " + str(excel_data['Contact'][count]))
         else:
@@ -80,5 +80,3 @@ driver.quit()
 print("The script executed successfully.")
 ```
 Note: The script may not work in case if the HTML of web WhatsApp is changed. If you face any problem please do let me know. Surely I will help you out. You can expect response on weekend only others days extremely busy with my routine activities.
-
-Find it on youtube. https://youtu.be/KBe26Kk5d9c
